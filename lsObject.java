@@ -71,7 +71,7 @@ public void setTime(String time){
 }
    public String toString()
    {
-   return getStage()+" "+getday()+" "+getTime()+" "+Arrays.toString(areas);
+   return "Stage: "+getStage()+" Day: "+getday()+" Time: "+getTime()+" Areas afffected: "+Arrays.toString(areas);
    }
    public int compareTo(lsObject other){
     return this.getInfo().compareTo(other.getInfo());

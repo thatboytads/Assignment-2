@@ -80,7 +80,7 @@ public class LSBSTApp
     }
 
     /**
-     * prints all area from the text file and displays total number of insertions
+     * prints all area from the text file and displays total number of insertions using an inOrder transveral
      */
     public void printAllAreas () 
     {
