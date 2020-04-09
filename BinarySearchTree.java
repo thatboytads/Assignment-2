@@ -5,27 +5,25 @@
 public class BinarySearchTree<dataType extends Comparable<? super dataType>> extends BinaryTree<dataType>
 {
    int opCount;
-   public BinarySearchTree(){
-   this.opCount= 0;
-   }
+   int insCount;
    public void insert ( dataType d )
-   {
+   {  
       if (root == null)
          root = new BinaryTreeNode<dataType> (d, null, null);
       else
          insert (d, root);
    }
    public void insert ( dataType d, BinaryTreeNode<dataType> node )
-   {
+   {  insCount++;
       if (d.compareTo (node.data) <= 0)
-      {
+      {  
          if (node.left == null)
             node.left = new BinaryTreeNode<dataType> (d, null, null);
          else
             insert (d, node.left);
       }
       else
-      {
+      {  
          if (node.right == null)
             node.right = new BinaryTreeNode<dataType> (d, null, null);
          else
@@ -101,5 +99,9 @@ public class BinarySearchTree<dataType extends Comparable<? super dataType>> ext
    public int getOpcount(){
       return this.opCount;
    }
+   public int getInscount(){
+      return this.insCount;
+   }
+   
    
 }
