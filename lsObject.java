@@ -37,19 +37,19 @@ public lsObject(String key){
  * @return
  */
 public String getStage(){
-    return stage;
+    return this.stage;
 
 }
 public String getday(){
-    return day;
+    return this.day;
     
 }
 public String getTime(){
-    return time;
+    return this.time;
     
 }
 public String[] getAreas(){
-    return areas;
+    return this.areas;
     
 }
 public String getInfo(){
