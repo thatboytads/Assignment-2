@@ -78,7 +78,7 @@ public class LSBSTApp
       String Nsamps[] = new String[] { "number 1", "number 2", "number 3", "number 4", "number 5", "number 6",
       "number 7", "number 8", "number 9", "number 10" };
       ArrayList<Object> findOpcount = new ArrayList<>();
-      int [] opCompare = new int[200000] ;
+      
       LSBSTApp lSTree1= new LSBSTApp();
       ArrayList<String> result= new ArrayList<>();
   int len = Nsamps.length;
@@ -101,17 +101,25 @@ public class LSBSTApp
      e.printStackTrace();
      
      }
+     File file3 = new File("./best counter BS tree"+".txt");
+      File file4 = new File("./Average counter BS tree"+".txt");
+      File file5 = new File("./worst counter BS tree"+".txt");
+     PrintWriter writer3 = new PrintWriter(file3);
+      PrintWriter writer4 = new PrintWriter(file4);
+      PrintWriter writer5 = new PrintWriter(file5);
      for (int i=0;i<len;i++ ){
        
         
        
-      File file1 = new File("./"+Nsamps[i]+".txt");
-      File file2 = new File("./"+Nsamps[i]+" operation counter"+".txt");
+      File file1 = new File("./"+Nsamps[i]+"BS tree.txt");
+
+      
       
       
       int j=0;
       PrintWriter writer = new PrintWriter(file1);
-      PrintWriter writer2 = new PrintWriter(file2);
+      
+      
       
 
       while(j<size){
@@ -153,31 +161,36 @@ public class LSBSTApp
      e.printStackTrace();
      
      }
+     int [] opCompare = new int[297006] ;
      for (int k=0; k<findOpcount.size();k++){
        lSTree1.bst.find((lsObject) findOpcount.get(k));
        opCompare[k]=  lSTree1.bst.getInscount()+lSTree1.bst.getOpcount();
-       writer2.println(opCompare[k]);
+       
      }
      int best= opCompare[1];
      int worst= opCompare[size-1];
-     int avg=0;
-     for (int t=0; t<opCompare.length;t++){
-       avg= avg+opCompare[t];
+     long avg=0;
+     for (int num: opCompare){
+       avg= avg+num;
 
      }
-     avg=avg/size;
-     writer2.println("best case: "+best);
-     writer2.println("Average case: "+avg);
-     writer2.println("worst case: "+worst);
+     long totalAvg=avg/size;
+     writer3.println(+best);
+     writer4.println(totalAvg);
+     writer5.println(worst);
+     
      
 
-     writer2.close();
+     
      
       
       size= size+250; 
      }
     
-     
+     writer3.close();
+     writer4.close();
+     writer5.close();
+
      
      
      
