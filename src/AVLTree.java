@@ -1,7 +1,4 @@
-// Hussein's AVL Tree
-// 2 April 2017
-// Hussein Suleman
-// reference: kukuruku.co/post/avl-trees/
+package src;
 
 public class AVLTree<dataType extends Comparable<? super dataType>> extends BinaryTree<dataType>
 {  

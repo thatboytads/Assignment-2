@@ -1,3 +1,4 @@
+package src;
 import java.lang.Comparable;
 import java.util.Arrays;
 public  class lsObject implements Comparable< lsObject> {
